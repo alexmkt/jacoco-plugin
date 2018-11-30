@@ -384,8 +384,11 @@ public abstract class CoverageObject<SELF extends CoverageObject<SELF>> {
 		CoverageGraphLayout layout = new CoverageGraphLayout()
 				.baseStroke(4f)
 				.axis()
-				.plot().type(CoverageType.LINE).value(CoverageValue.MISSED).color(Color.RED)
-				.plot().type(CoverageType.LINE).value(CoverageValue.COVERED).color(Color.GREEN);
+				.plot().type(CoverageType.LINE).value(CoverageValue.PERCENTAGE).color(Color.GREEN)
+				.plot().type(CoverageType.METHOD).value(CoverageValue.PERCENTAGE).color(Color.CYAN)
+				.plot().type(CoverageType.BRANCH).value(CoverageValue.PERCENTAGE).color(Color.RED)
+				.plot().type(CoverageType.INSTRUCTION).value(CoverageValue.PERCENTAGE).color(Color.ORANGE)
+				.plot().type(CoverageType.COMPLEXITY).value(CoverageValue.PERCENTAGE).color(Color.BLUE);
 
 		createGraph(t, width, height,layout).doPng(req, rsp);
 	}
